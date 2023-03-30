@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="This is an awesome website">
+    <meta name="keywords" content="Jessica, Website, learning"> <!--searh engines use the keywords to bring up your site-->
+    <title>Jessica's website</title>
+</head>
+<body>
+    <p><a href="index.html">Home</a></p>
+    <h2><u>HTML5 WEB STORAGE</u></h2>
+    <h3><b>The Advantages of Web Storage</b></h3>
+    <ul>
+        <li>More secure</li>
+        <li>Faster</li>
+        <li>Stores a larger amount of data</li>
+        <li>Stored data is not sent with every server request</li>
+        <li>Local storage is per domain. All pages from
+            one domain can store and access the same data
+        </li>
+    </ul>
+</br>
+    <h3><b>Types of Web Storage Objects</b></h3>
+    <ul>
+        <li>sessionStorage() -session storage is destroyed
+            once the user closes the browser
+        </li>
+        <li>localStorage() - local storage stores data with
+            no expiration date
+        </li>
+    </ul>
+</br>
+    <h3><b>Working with Values</b></h3>
+    <p>The syntax for web storage for both local and session
+        storage is very simple and similar. The data is stored as 
+        key/value pairs
+    </p>
+    <ol>
+        <li><b>Storing a value:</b> localStorage.setItem("key1", "value1")</li>
+        <li><b>Getting a Value:</b> alert(localStorage.getItem("key1"))
+        --this will print the value</li>
+        <li><b>Removing a Value:</b> localStorage.removeItem("key1")</li>
+        <li><b>Removing All Values:</b> localStorage.clear()</li>
+    </ol>
+</br>
+<h2><u>Geolocation API</u></h2>
+<p>In HTML5, the Geolocation API is used to obtain the user's 
+geographical location. Since this can compromose user privacy,
+ the option is not available unless the user approves it.</p>
+ <aside>Geolocation is much more accurate for devices with GPS, like smartphones</aside></br>
+<h3>Using HTML Geolocation</h3>
+<p>The Geolocation API's main methos is getCurrentPosition, 
+    which retrieves the current geographic location of the 
+    user's device.</p>
+<p>navigator.geolocation.getCurrentPosition()</p>
+<p>Parameters:</p>
+<ol>
+    <li><b>showLocation (mandatory): </b>Defines the 
+    callback method that retrieves location informaton</li>
+    <li><b>ErrorHandler (optional): </b>Defines the callback
+    method that is invoked when an error occurs in processing 
+    the asynchronous call</li>
+    <li><b>Options (optional): </b>Defines a set of options for retrieving
+    the location information</li>
+</ol>
+</br>
+<h3>Presenting Data</h3>
+<p>User location can be presented in 2 ways: <b>Geodetic</b> and <b>Civic.</b>
+The geodetic way to describe position refers directly to latitude and longitude.
+The civic representation of location data is presented in 
+a format that is more easily read and understood by the average person.
+Each parameter has both a geodetic and a civil representation.</p>
+<table>
+    <thead>
+        <tr>
+            <th>Attribute</th>
+            <th>Geodetic</th>
+            <th>Civic</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Position</td>
+            <td>59.3, 18.6</td>
+            <td>Stockholm</td>
+        </tr>
+        <tr>
+            <td>Elevation</td>
+            <td>10 meters</td>
+            <td>4<sup>th</sup> floor</td>
+        </tr>
+        <tr>
+            <td>Heading</td>
+            <td>234 degrees</td>
+            <td>City center</td>
+        </tr>
+        <tr>
+            <td>Speed</td>
+            <td>5km/h</td>
+            <td>Walking</td>
+        </tr>
+        <tr>
+            <td>Orientation</td>
+            <td>45 degrees</td>
+            <td>North-East</td>
+        </tr>
+    </tbody>
+</table>
+<p>The getCurrentPosition() method returns an object if it is 
+    successful. The latitude, longitude, and accuracy properties 
+    are always returned.
+</p>
+
+<h2><u>Making Elements Draggable</u></h2>
+<p>The drag and drop feature lets you "grab" an object and 
+    drag it to a different location. To make an element draggable, 
+    just set the <b>draggable</b> attribute to true:
+</p>
+<img draggable="true" />
+<p>Any HTML element can be draggable. The API for HTML5 drag and drop is event-based.</p>
+<p>Example (see notes in code)</p>
+<!--
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <script>
+            function allowDrop(ev) {ev.preventDefault();}
+            function drag(ev) {ev.dataTransfer.setData("text", ev.target.id);}
+            function drop(ev) {ev.preventDefault(); 
+                var data = 
+            ev.dataTransfer.getData("text");
+            ev.target.appendChild(document.getElementById(data));}
+        </script>
+    </head>
+    <body>
+        <div id="box" ondrop="drop(event)" ondragover="allowDrop(event)" style="border:1px solid black; width:200px; height:200px"></div>
+        <img id="image" src="sample.jpg" draggable="true" ondragstart="drag(event)" width="150" height="50" alt="" />
+    </body>
+</html>
+-->
+<h3>What to Drag</h3>
+<p>When the element is dragged, the <b>ondragstart</b> attribute calls
+a function, drag(event), which specifies what data is to be dragged.
+The <b>dataTransfer.setData()</b> method sets the data type
+and the value of the dragged data:</p>
+<P>
+    function drag(ev) {
+       ev.dataTransfer.setData("text", ev.target.id);
+    }  
+</P>
+<p>
+    In our example, the data type is "text" and the value
+    is the ID of the draggable element ("image").
+</p>
+<h3>Where to Drop</h3>
+<p>
+    The <b>ondragover</b> event specifies where the dragged data 
+    can be dropped. By default, data and elements cannot be dropped
+     in otherelements. To allow a drop, we must prevent the default 
+     handling of the element. This is done by calling the 
+     event.<b>preventDefault</b>() method for the <b>ondragover</b> 
+     event.
+</p>
+<h3>Do the Drop</h3>
+<p>When the dragged data is dropped, a drop event occurs. </br>
+    In the example above, the <b>ondrop</b> attribute calls 
+    a function, drop(event):
+</p>
+<p>
+    function drop(ev) { </br>
+        ev.preventDefault(): <br>
+        var data = ev.dataTransfer.getData("text");</br>
+    </br>
+    ev.target.appendChild(document.getElementById(data));</br>
+    }
+</p>
+<p>
+    The <b>preventDefault()</b> method prevents the browser's 
+    default handling of the data (default is open as link on drop).</br>
+    The dragged data can be accessed with the <b>dataTransfer.getData()</b>
+     method. This method will return any data that was set to
+      the same type in the setData() method.</br>
+      The dragged data is the ID of the dragged element ("image").</br>
+</br>
+At the end, the dragged element is appended into the drop element, using 
+the appendChild() function.
+</p>
+
+<h2><u>SVG</u></h2>
+<h3>Drawing Shapes</h3>
+<ul>
+    <li>
+        <b>SVG</b> stands for <b>S</b>calable <b>V</b>ector <b>G</b>raphics, 
+        and is used to draw shapes with HTML-style markup.
+    </li>
+    <li>
+        It offers several methods for drawing paths, boxes, circles, 
+        text, and graphic images.
+    </li>
+    <li>
+        SVG is not pixel-based, so it can be magnified infinitely with no loss of quality.
+    </li>
+</ul>
+<h3>Inserting SVG Images</h3>
+<p>An SVG image can be added to HTML code with just a basic 
+    image tag that includes a source attribute pointing to the image:
+    
+       <p> < img src="image.svg" alt="" height="300" /></p>
+    
+</p>
+<p>
+    SVG defines vector-based graphics in XML format.
+</p>
+<h3>Drawing a Circle</h3>
+<ol>
+    <li> 
+        To draw shapes with SVG, you first need to create 
+        an SVG element tag with two attributes: width and height.</br>
+        < svg width="1000" height="1000"></svg>
+    </li>
+    <li>
+        To create a circle, add a < circle> tag:</br>
+        < svg width="2000" height="2000"></br>
+            < circle cx="80" cy="80" r="50" fill="green">< /circle>
+        < /svg>
+    </li>
+        <ul>
+            <li>
+                <b>cx</b> pushes the center of the circle further
+                to the right of the screen.
+            </li>
+            <li>
+                <b>cy</b> pushes the center of the circle further down 
+                from the top of the screen.
+            </li>
+            <li>
+                <b>r</b> defines the radius
+            </li>
+            <li>
+                <b>fill</b> determines the color of our circle
+            </li>
+            <li>
+                <b>stroke</b> adds an outline to the circle
+            </li>
+        </ul>
+    <li>
+        Every element and every attribute in SVG files can be animated.
+    </li>    
+     
+    
+</ol>
+</br>
+<h3>Other Shape Elements</h3>
+<p><b>< rect> defines a rectangle:</b></p>
+<p>
+< svg width="2000" height="2000"></br>
+    < rect width="300" height="100" x="20" y="20" fill="blue" />
+< /svg>
+</p>
+<p>
+    <b>< line> defines a line segment:</b>
+</p>
+<p>
+< svg width="400" height="410"></br>
+    < line x1="10" y1="10" x2="200" y2="100" style="stroke:#000000; stroke-linecap:round; stroke-width:20" /></br>
+< /svg></br>
+</br>
+(x1, y1) define the start coordinates</br>
+(x2, y2) define the end coordinates
+</p>
+
+<p><b>< polyline> defines shapes built from multiple line definitions:</b></p>
+<p>
+    < svg width="2000" height="500"></br>
+    < polyline style="stroke-linejoin:miter; stroke:black; stroke-width:12; fill: none;" points="100 100, 150 150, 200 100" /></br>
+< /svg>
+</p>
+<p>
+    Points are the polyline's coordinates. 
+</p>
+
+<h2><u>Ellipses and Polygons</u></h2>
+<h3>Ellipse</h3>
+<p>
+    The ellipse is similar to the circle, with one exception:
+    you can independently change the horizontal and vertical
+    axes of its radius, using the <b>rx</b> and <b>ry</b> attributes.
+</p>
+<p>
+< svg height="500" width="1000"> </br>
+    < ellipse cx="200" cy="100" rx="150" ry="70" style="fill:blue" /></br>
+< /svg>
+</p>
+</br>
+<h3>Polygon</h3>
+<p>The polygon element is used to create a graphic with at least
+    three sides. The polygon element is unique because it automatically
+    closes off the shape for you.
+</p>
+<p>
+< svg width="2000" height="2000"></br>
+    < polygon points="100 100, 200 200, 300 0" style="fill:blue; stroke:black" /></br>
+< /svg>
+</p>
+<style>
+    svg{
+        display:block;
+    }
+</style>
+rectangle:
+<svg width="2000" height="200">
+    <rect width="300" height="100" x="20" y="20" fill="blue" />
+</svg>
+
+circle:
+<svg width="2000" height="200">
+    <circle cx="80" cy="80" r="50" fill="green"></circle>
+</svg>
+
+line:
+<svg width="400" height="410">
+    <line x1="10" y1="10" x2="200" y2="100" style="stroke:#000000; stroke-linecap:round; stroke-width:20" />
+</svg>
+
+polyline:
+<svg width="2000" height="500">
+    <polyline style="stroke-linejoin:miter; stroke:black; stroke-width:12; fill: none;" points="100 100, 150 150, 200 100" />
+</svg>
+
+ellipse:
+<svg height="500" width="1000">
+    <ellipse cx="200" cy="100" rx="150" ry="70" style="fill:blue" />
+</svg>
+
+polygon:
+<svg width="2000" height="2000">
+    <polygon points="100 100, 200 200, 300 0" style="fill:blue; stroke:black" />
+</svg>
+-->
+<h2><u>SVG Animations & Paths</u></h2>
+<p>
+    SVG animations can be created using the < animate> element.
+</br>
+    The example below creates a rectangle that will change its position in 
+    3 seconds and will then repeat the animation twice:
+</p>
+<ul>
+    <li>
+        <b>attributeName:</b> Specifies which attribute will be 
+        affected by the animation.
+    </li>
+    <li>
+        <b>from:</b> Specifies the starting value of the attribute.
+    </li>
+    <li>
+        <b>to:</b> Specifies the ending value of the attribute.
+    </li>
+    <li>
+        <b>dur:</b> Specifies how long the animation runs (duration).
+    </li>
+    <li>
+        <b>fill:</b> Specifies whether or not the attribute's 
+        value should return to its initial value when the animation 
+        is finished (Values:"remove" resets the value; "freeze" 
+        keeps the "to value")
+    </li>
+    <li>
+        <b>repeatCount:</b> Specifies the repeat count of the animation.
+    </li>
+    <li>
+        In the example below, the rectangle changes its x attribute 
+        from 0 to 300 in 3 seconds
+    </li>
+    <li>
+        To repeat the animation indefinitely, use the value 
+        "indefinite" for the repeatCount attribute.
+    </li>
+</ul>
+<p>
+< svg width="1000" height="250"></br>
+    < rect width="150" height="150" fill="orange"></br>
+        < animate attributeName="x" from="0" to="300" 
+        dur="3s" fill="freeze" repeateCount="2"/></br>
+    < /rect></br>
+< /svg></br>
+</p>
+<!--
+<svg width="1000" height="250">
+    <rect width="150" height="150" fill="orange">
+        <animate attributeName="x" from="0" to="300" 
+        dur="3s" fill="freeze" repeateCount="2"/>
+    </rect>
+</svg>
+-->
+
+<h3>Paths</h3>
+<p>
+    The < path> element is used to define a path.</br>
+</br>
+    The following commands are available for path data:
+    <ul>
+        <li>
+            <b>M:</b> moveto
+        </li>
+        <li>
+            <b>L:</b> lineto
+        </li>
+        <li>
+            <b>H:</b> horizontal lineto
+        </li>
+        <li>
+            <b>V:</b> vertical lineto
+        </li>
+        <li>
+            <b>C:</b> curveto
+        </li>
+        <li>
+            <b>S:</b> smooth curveto
+        </li>
+        <li>
+            <b>Q:</b> quadratic Bezier curveto
+        </li>
+        <li>
+            <b>T:</b> smooth quadratic Bezier curveto
+        </li>
+        <li>
+            <b>A:</b> elliptical Arc
+        </li>
+        <li> 
+            <b>Z:</b> closepath
+        </li>
+    </ul>
+</p>
+<p>
+    < svg width="500" height="500"></br>
+        < path d="M 0 0 L200 200 L200 0 Z" style="stroke:#000; fill:none;"/></br> 
+    < /svg>
+</p>
+<p>
+    All of the above commands can also be expressed with lower 
+    case letters. When capital letters are used, it indicates 
+    absolute position; lower case indicates relative position.
+</p>
+<!--
+<svg width="500" height="500">
+    <path d="M 0 0 L200 200 L200 0 Z" style="stroke:#000; fill:none;"/> 
+</svg>
+-->
+
+<h2><u>Canvas</u></h2>
+<h3>The < canvas> Element</h3>
+<p>
+    The HTML canvas is used to draw graphics that include everything from 
+    simple lines to complex graphic objects.</br>
+</br>
+    <b>The canvas element is defined by:</b></br>
+    < canvas id="canvas1" width="200" height="100">< /canvas>
+</p>
+<p>
+    The canvas element is only a container for graphics. You must 
+    use a script (usually JavaScript) to actually draw the graphics.
+</p>
+<p>
+    The canvas element must have an <b>id attribute</b> so it 
+    can be referred to by JavaScript:</br>
+</br>
+    <canvas id="canvas1" width="400" height="300"></canvas></br>
+    <script>
+        var can = document.getElementById("canvas1");
+        var ctx = can.getContext("2d");
+    </script>
+</p>
+<!-- 
+    <canvas id="canvas1" width="400" height="300"></canvas>
+    <script>
+        var can = document.getElementById("canvas1");
+        var ctx = can.getContext("2d");
+    </script>
+-->
+
+<p>
+    <b>getContext()</b> returns a drawing context on the canvas.
+</p>
+<h3>Canvas Coordinates</h3>
+<p>
+    The HTML canvas is a two-dimensional grid. The upper-left 
+    corner of the canvas has the coordinates (0,0).
+</br></br>
+    X coordinate increases to the right.</br>
+    Y coordinate increases toward the bottom of the canvas.
+</p>
+
+
+</body>
+</html>

@@ -1,0 +1,1153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="This is an awesome website">
+    <meta name="keywords" content="Jessica, Website, learning"> <!--searh engines use the keywords to bring up your site-->
+    <title>Jessica's website</title>
+</head>
+<body>
+    <a href="index.html">Home</a>
+</br>
+<h1>JavaScript Notes</h1>
+<h2><u>Variables</u></h2>
+<p>
+    <b>Variables</b> are containers for storing data values.
+    The value of a variable can change throughout the program.
+</br>
+    Declaring a variable is as simple as using the keyword "var"</br>
+</br>   
+    var x = 10;
+</p>
+<script>
+    var x = 10;
+</script>
+<p>
+    In this example we've assigned the value of 10 to the variable 
+    x. We've used the word assigned deliberately here, because 
+    in JavaScript, the equal sign (=) is actually called the 
+    "assignment" operator, rather than an "equal to" operator. 
+    This means that in JS, x = y will assign the value of y to x variable.
+</p>
+
+<h3>Using Variables</h3>
+<p>
+    Imagine your program has 1000 lines of code that include 
+    the variable x. With variables you can change the value 
+    of the variables and use them multiple times in your code.
+</p>
+<script>
+    var x = 100;
+    console.log(x);
+
+    x = 42;
+    console.log(x);
+</script>
+
+<h3>Naming Variables</h3>
+<ul>
+    <li>
+        Variable names are case-sensitive
+    </li>
+    <li>
+        The first character of a variable name <b>must be</b> 
+        a letter, underscore, or a dollar sign. Subsequent 
+        characters can be letters, digits, underscores, or 
+        dollar signs
+    </li>
+    <li>
+        Variable names <b>can't</b> include a <b>mathematical or logical operator</b> 
+        in their name. For instance, 2*something or this+that
+    </li>
+    <li>
+        Variable names can't contain spaces
+    </li>
+    <li>
+        You are not allowed to use any special characters such as #, %, etc
+    </li>
+    <li>
+        JavaScript is a hyphen free zone. They're reserved for subtractions
+    </li>
+</ul>
+</br>
+<h2><u>Comments</u></h2>
+<p>Single line comments are denoted by //</p>
+<p>Multi-line comments are written between /*  */</p>
+</br>
+<h2><u>Data Types</u></h2>
+<p>
+    The term <b>data type</b> refers to the types of values a 
+    program can work with. The sky's the limit with JS variables, 
+    which can hold a bunch of different data types, such as 
+    numbers, strings, and arrays.
+</p>
+<p>
+    Numbers can be written with or without decimals.
+</p>
+<script>
+    var num = 42 //a number without decimals
+
+    var price = 55.55 //a number with decimals
+    document.write(price);
+</script>
+<h3>Strings</h3>
+<p>
+    We can use strings to store and manipulate text. A string 
+    can be any text wrapped in quotes, either single or double, 
+    as long as you're consistent with them. You can also use 
+    quotes inside the string as long as they don't match the 
+    quotes enclosing the string.
+</p>
+<script>
+    var name = 'Jessica';
+    var text = "My name is \"Jessica\""
+    document.write(text)
+</script>
+<p>
+    You can get double quotes inside of double quotes using 
+    the escape character like this: \"text\"
+</p>
+<p>
+    <b>backslash (\) escape character:</b> comes to the rescue
+     when you need to put quotes within strings (and a bunch of other situations) 
+     by transforming special characters into <u>string</u> characters.
+</p>
+<script>
+    var sayHello = 'Hello world! \'I am a JavaScript programmer.\' ';
+    document.write(sayHello);
+</script>
+<p>
+    The escape character (\) isn't just for quotes, it works when you need to 
+    put other special characters inside strings too. </br>
+    If you start a string with a single quote, then you 
+    need to end it with a single quote, same if used double quote.
+</p>
+<table>
+    <thead>
+        <tr>
+            <th>Code</th>
+            <th>Outputs</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>\'</td>
+            <td>single quote</td>
+        </tr>
+        <tr>
+            <td>\"</td>
+            <td>double quote</td>
+        </tr>
+        <tr>
+            <td>\\</td>
+            <td>backslash</td>
+        </tr>
+        <tr>
+            <td>\n</td>
+            <td>new line</td>
+        </tr>
+        <tr>
+            <td>\r</td>
+            <td>carriage return</td>
+        </tr>
+        <tr>
+            <td>\t</td>
+            <td>tab</td>
+        </tr>
+        <tr>
+            <td>\b</td>
+            <td>backspace</td>
+        </tr>
+        <tr>
+            <td>\f</td>
+            <td>form feed</td>
+        </tr>
+    </tbody>
+</table>
+<h3>Booleans</h3>
+<p>
+    Booleans serve a useful function by leting you have one of two 
+    values, either true or false. Used when you need a data type 
+    that can only have one of two possible values, like yes/no, 
+    on/off, or true/false. </br>
+    The Boolean value of 0 (zero), null, undefined, empty string is false. 
+    Everything with a "real" value is true
+</p>
+<script>
+    var isActive = true;
+    var isHoliday = false;
+</script>
+</br>
+<h2><u>Math Operators</u></h2>
+<h3>Arithmetic Operators</h3>
+<p>
+    <b>Arithmetic operators</b> perform arithmetic functions on 
+    numbers (both literals and variables)
+</p>
+<table>
+    <thead>
+        <tr>
+            <th>Operator</th>
+            <th>Description</th>
+            <th>Example</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>+</td>
+            <td>Addition</td>
+            <td>25+5=30</td>
+        </tr>
+        <tr>
+            <td>-</td>
+            <td>Subtraction</td>
+            <td>25-5=20</td>
+        </tr>
+        <tr>
+            <td>*</td>
+            <td>Multiplication</td>
+            <td>10*20=200</td>
+        </tr>
+        <tr>
+            <td>/</td>
+            <td>Division</td>
+            <td>20/2=10</td>
+        </tr>
+        <tr>
+            <td>%</td>
+            <td>Modulus</td>
+            <td>56%3=2</td>
+        </tr>
+        <tr>
+            <td>++</td>
+            <td>Increment</td>
+            <td>var a=10; a++; now a=11</td>
+        </tr>
+        <tr>
+            <td>--</td>
+            <td>Decrement</td>
+            <td>var a=10; a--; now a=9</td>
+        </tr>
+    </tbody>
+</table>
+<p>Addition example below</p>
+<script>
+    var x = 10 + 5;
+    document.write(x);
+</script>
+<p>
+    You can add as many numbers or variables together as you 
+    want/need to.
+</p>
+<script>
+    var x = 10;
+    var y = x + 5 + 22 + 45 + 6548;
+    document.write(y);
+</script>
+<p>
+    You can get the result of a <u>string</u> expression using the 
+    eval() function, which takes a <u>string</u> expression argument 
+    like eval("10*20+8") and returns the result. if the argument 
+    is empty, it returns undefined.
+</p>
+</br>
+<h3>The Modulus</h3>
+<p>
+    The <b>modulus (%) operator</b> returns the division remainder 
+    (what's left over). In JavaScript, we can use the modulus 
+    operator on integers and on floating point numbers.
+</p>
+<script>
+    var a = 26 % 6;
+    document.write(a);
+</script>
+</br></br>
+<h3>Increment & Decrement</h3>
+<p>
+    <b>Increment ++:</b> increases the numeric value of its operand 
+    by 1. When placed before the operand, it'll return the incremented 
+    value. When placed after it, it'll return the original value 
+    and then increments the operand.
+</p>
+<p>
+    <b>Decrement --:</b> decreases the numeric value of its operand 
+    by 1. When placed before the operand, it'll return the decremented 
+    value. When placed after the operand, it'll return the original 
+    value and then decrements the operand.
+</p>
+<table>
+    <thead>
+        <tr>
+            <th>Operator</th>
+            <th>Description</th>
+            <th>Example</th>
+            <th>Result</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>var++</td>
+            <td>Post Increment</td>
+            <td>var a = 0, b = 10;</br> var a = b++;</td>
+            <td>a = 10 and b = 11</td>
+        </tr>
+        <tr>
+            <td>++var</td>
+            <td>Pre Increment</td>
+            <td>var a = 0, b = 10;</br> var a = ++b;</td>
+            <td>a = 11 and b = 11</td>
+        </tr>
+        <tr>
+            <td>var--</td>
+            <td>Post Decrement</td>
+            <td>var a = 0, b = 10;</br> var a = b--;</td>
+            <td>a = 10 and b = 9</td>
+        </tr>
+        <tr>
+            <td>--var</td>
+            <td>Pre Decrement</td>
+            <td>var a = 0, b = 10;</br> var a = --b;</td>
+            <td>a = 9 and b = 9</td>
+        </tr>
+    </tbody>
+</table>
+</br>
+<h2><u>Assignment Operators</u></h2>
+<p>
+    Assignment operators are used to assign values to variables. 
+    You can use multiple assignment operators in one line, such as 
+    x -= y += 9.
+</p>
+<table>
+    <thead>
+        <tr>
+            <th>Operator</th>
+            <th>Example</th>
+            <th>Is equivalent to</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>=</td>
+            <td>x = y</td>
+            <td>x = y</td>
+        </tr>
+        <tr>
+            <td>+=</td>
+            <td>x += y</td>
+            <td>x = x + y</td>
+        </tr>
+        <tr>
+            <td>-=</td>
+            <td>x -= y</td>
+            <td>x = x - y</td>
+        </tr>
+        <tr>
+            <td>*=</td>
+            <td>x *= y</td>
+            <td>x = x * y</td>
+        </tr>
+        <tr>
+            <td>/=</td>
+            <td>x /= y</td>
+            <td>x = x / y</td>
+        </tr>
+        <tr>
+            <td>%=</td>
+            <td>x %= y</td>
+            <td>x = x % y</td>
+        </tr>
+    </tbody>
+</table>
+</br>
+<h2><u>Comparison Operators</u></h2>
+<p>
+    We can use <b>comparison operators</b> in logical statements 
+    to find out if variables or values are different. </br>
+    You get either <b>true</b> or <b>false</b>. For example, the 
+    <b>equal to (==)</b> operator checks whethere the operands' 
+    values are equal.</br>
+    You can compare <b>all types</b> of data with comparison 
+    operators, they'll always return true or false.
+</p>
+<script>
+    var num = 10;
+    //num == 8 will return false
+</script>
+<img width="500" src="IMG_0355.PNG" alt="table"/>
+</br>
+<p>
+    One important thing to remember when we use operators, 
+    is that they only work when they're comaring the 
+    <b>same data type</b>; numbers with numbers, strings with 
+    strings, etc.
+</p>
+</br>
+<h2><u>Logical or Boolean Operators</u></h2>
+<p>
+    <b>Logical</b> Operators, also known as <b>Boolean</b> 
+    Operators, evaluate an expression and return <b>true</b> 
+    or <b>false.</b> You can check all types of data; comparison 
+    operators always return true or false.
+</p>
+<ul>
+    <li><b>&&</b> -- Returns true, if both operands are true</li>
+    <li><b>||</b> -- Returns true, if one of the operands is true</li>
+    <li><b>!</b> -- Returns true, if the operand is false, 
+        and false if the operand is true</li>
+</ul>
+<h3>Logical Operators</h3>
+<p>
+    <b>Example:</b> Here we've connected two Boolean expressions 
+    with the AND operator. </br>
+    (4 > 2) && (15 > 10) </br>
+    For this expression to be true, both conditions need to be true. </br>
+    -The first condition determines whether 4 is greater than 2, 
+    which is true. </br>
+    -The second condition determines whether 15 is greater than 10, 
+    which is also true.
+</p>
+<h3>Conditional (Ternary) Operator</h3>
+<p>
+    <b>Conditional</b>, or <b>Ternary operators</b> assign a value 
+    to a variable, based on some condition. </br>
+    This is what the syntax would look like: </br>
+    variable = (condition) ? value1: value2 </br>
+</br>
+    Example: (see code)
+</p>
+<script>
+    var isAdult = (age < 18) ? "Too young": "Old enough";
+</script>    
+<p>
+    If the variable age is a value below 18, the value of the variable 
+    isAdult will be "Too young". Otherwise the value of isAdult 
+    will be "Old enough". 
+</br>
+    With logical operators you can connect as many expressions as you 
+    want or need to.
+</p>
+<h2><u>String Operators</u></h2>
+<p>
+    <b>Concatenation:</b> we can use concatenation (represented 
+    by the + sign) to build strings made up of multiple smaller 
+    strings, or by joining strings with other types. Numbers in 
+    quotes are treated as strings, so "42" is not the number 42, 
+    it's a string that includes the two separate characters, 4 
+    and 2.
+</br>
+    Example: (see code)
+</p>
+<script>
+    var mystring1 = "I am learning ";
+    var mystring2 = "JavaScript.";
+    document.write(mystring1 + mystring2);
+</script>
+
+<h2><u>The if Statement</u></h2>
+<p>
+    The if statement is a type of conditional statement. 
+    We use <b>if</b> to specify a block of code that we want 
+    to be executed if a specified condition is true. The statement 
+    will only be executed if the specified condition is <b>true</b>. 
+</br>
+    Example: (see code)
+</p>
+<script>
+    var myNum1 = 7;
+    var myNum2 = 10;
+    if (myNum1 < myNum2) {
+        //alert
+        ("JavaScript is easy to learn.");
+    }
+//should look like alert("JavaScript is easy to learn");
+</script>
+<p>
+    If the if statement evaluates to false, the alert statement 
+    gets skipped and the program continues with the line after the 
+    if statement's closing curly brace.
+</p>
+<h2><u>The else Statement</u></h2>
+<p>
+    The else statement is used to specify a block of code that wil 
+    execute if the condition is false. </br>
+    Example: (see code)
+</p>
+<script>
+    var myNum1 = 7;
+    var myNum2 = 10;
+    if (myNum1 > myNum2) {
+        document.write("This is my first condition");
+    }
+    else {
+        document.write("This is my second condition");
+    }
+</script>
+<h2><u>The else if Statement</u></h2>
+<p>
+    The else if statement allows us to specify a new condition 
+    if the first condition is false. </br>
+    Example: (see code)
+</p>
+<script>
+    var course = 3;
+    if (course == 1) {
+        document.write("HTML Tutorial");
+    } else if (course == 2) {
+        document.write("CSS Tutorial");
+    } else {
+        document.write("JavaScript Tutorial");
+    }
+</script>
+<p>
+    The final else statement "ends" the else if statement and 
+    should be always written after the if and else if statements.
+    The final else block will be executed when none of the conditions 
+    are true. You can write as many else if statements as you need.
+</p>
+<h2><u>The switch Statement</u></h2>
+<h3>switch</h3>
+<p>
+    The switch statement is used to test for multiple conditions, 
+    and can be used instead of if else statements for each condition. 
+    The switch statement performs different actions based on 
+    different conditions. </br>
+    The switch expression is evaluated once. The value of the expression is 
+    compared with the values of each case, and if there's a match, 
+    that block of code is executed. You can have as many case 
+    statements as you need. </br>
+    Example: (see code)
+</p>
+<script>
+    var day = 2;
+    switch (day) {
+        case 1:
+            document.write("Monday");
+            break;
+        case 2:
+            document.write("Tuesday");
+            break;
+        case 3:
+            document.write("Wednesday");
+            break;
+        default:
+            document.write("Another day");
+    }
+</script>
+<h3>The break Keyword</h3>
+<p>
+    The <b>break</b> keyword essentially switches the switch 
+    statement off. Breaking out of the switch block stops the 
+    execution of more code and case testing inside the block. 
+    Usually a <b>break</b> should be put in each case statement.
+</p>
+<h3> The default Keyword</h3>
+<p>
+    Often there will be no match, but we still need the program to output 
+    something. For this we use the <b>default</b> keyword, which specifies 
+    the code to run if there's no case match. The default block 
+    can be omitted if there is no need to handle the case when 
+    no match is found.
+</p>
+<script>
+    var color ="yellow";
+    switch(color) {
+        case "blue":
+            document.write("This is blue.");
+            break;
+        case "red":
+            document.write("This is red.");
+            break;
+        case "green":
+            document.write("This is green.");
+            break;
+        case "orange":
+            document.write("This is orange.");
+            break;
+        default:
+            document.write("Color not found.");
+    }
+</script>
+<h2><u>The For Loop</u></h2>
+<h3>Loops</h3>
+<p>
+    Loops can execute a block of code a number of times. They're 
+    handy when you want to run the same code repeatedly, adding 
+    a different value each time. JavaScript has three types of 
+    loops: <b>for, while,</b> and <b>do while.</b>
+</p>
+<p>
+    Here's the syntax for the for loop: </br>
+</br>
+    for (statement 1; statement 2; statement 3) { </br>
+        code block to be executed </br>
+    }
+</p>
+<p>
+    This is what happens when it runs: </br>
+    <b>Statement 1</b> is executed before the loop (the code block) 
+    starts. </br>
+    <b>Statement 2</b> defines the condition for running the 
+    loop (the code block). </br>
+    <b>Statement 3</b> is executed each time after the loop 
+    (the code block) has been executed. 
+</p>
+<p>
+    Example: (see code)
+</p>
+<script>
+    for (i=1; i<=5; i++) {
+        document.write(i + "<br />");
+    }
+</script>
+<p>
+    This example creates a <b>for</b> loop that prints the numbers 
+    1 through 5. </br>
+    <b>Statement 1</b> sets a variable before the loop starts 
+    (var i=1). </br>
+    <b>Statement 2</b> defines the condition for the loop to run 
+    (it must be less than or equal to 5). </br>
+    <b>Statement 3</b> increases a value (i++) each time the code 
+    block in the loop has been executed.
+</p>
+<p>
+    <b>Statement 1</b> is optional, and can be left out if your 
+    values are set before the loop starts. </br> Example:
+</p>
+<script>
+    var i = 1;
+    for (; i<=5; i++) {
+        document.write(i);
+    }
+</script>
+<p>
+    You can also initiate more than one value in <b>statement 1</b>, 
+    using commas to separate them. </br> Example:
+</p>
+<script>
+    for (i=1, text=""; i<=5; i++) {
+        text = i;
+        document.write(i);
+    }
+</script>
+<p>
+    If <b>statement 2</b> returns true, the loop will start over again, 
+    if it returns false, the loop will end. Statement 2 is also 
+    optional, but only if you put a <b>break </b> inside the loop. 
+    Otherwise, the loop will never end.
+</p>
+<p>
+    <b>Statement 3</b> is used to change the initial <u>variable</u>. 
+    It can do anything, including negative increment (i--), positive 
+    increment (i=i+15). Statement 3 is also optional, but only if 
+    you increment your values inside the loop. 
+</p>
+
+<script>
+    var i = 0;
+    for (; i < 10; ) {
+        documnet.write(i);
+        i++;
+    }
+</script>
+<p>
+    The following example writes even numbers from 0 to 20.
+</p>
+<script>
+    var x = 0;
+    for (; x <= 20; x+= 2) {
+        document.write(x);
+    }
+</script>
+<h2><u>The While Loop</u></h2>
+<p>
+    The <b>while</b> loop repeats through a block of code, but 
+    only as long as a specified condition is <b>true.</b> The 
+    condition can be any conditional statement that returns 
+    true or false. </br>
+    Example: (see code)
+</p>
+<script>
+    var i=0;
+    while (i<=10) {
+        document.write(i + "<br />");
+        i++;
+    }
+</script>
+<p>
+    The loop in this code will continue to run as long as i is 
+    less than or equal to 10, and each time the loop runs, it will 
+    increase by 1. This will output the values from 0 to 10. Be 
+    careful when writing conditions. If a condition is always 
+    true, the loop will run forever. Endless loops are not good. 
+    One way of this happening is we forget to increase the <u>variable</u> 
+    used in the condition. Make sure that the condition in a 
+    while loop eventually becomes false.
+</p>
+<h2><u>The Do...While Loop</u></h2>
+<p>
+    The <b>do...while</b> loop is a variant of the while loop 
+    with one important difference. This loop will execute the code 
+    block once, <b>before</b> checking if the condition is true, 
+    and then it will repeat the loop as long as the condition is 
+    true. </br>
+    Example: (see code)
+</p>
+<script>
+    var i=20;
+    do {
+        document.write(i + "<br />");
+        i++;
+    }
+    while (i<=25);
+</script>
+<p>
+    The loop will always be executed <b>at least once</b>, even if 
+    the condition is false, because the code block is executed before 
+    the condition is tested.
+</p>
+<h2><u>Break and Continue</u></h2>
+<h3>Break</h3>
+<p>
+    We use the <b>break</b> statement to "jump out" of a loop 
+    and continue exeuting the code after that loop.
+</p>
+<p>
+    Example: in this example, once i reaches 5, it will break out 
+    of the loop. (see code) 
+</p>
+<script>
+    for (i = 0; i <= 10; i++) {
+        if (i == 5) {
+            break;
+        }
+        document.write(i + "<br />");
+    }
+</script>
+<p>
+    You can use the return keyword to return some value immediately 
+    from the loop inside of a function. This will also break the loop.
+</p>
+<h3>Continue</h3>
+<p>
+    Unlike the break statement, the <b>continue</b> statement breaks 
+    only one iteration in the loop, and continues with the next 
+    iteration.
+</p>
+<p>
+    Example: The value 5 is not printed because <b>continue</b> 
+    skips that iteration of the loop (see code)
+</p>
+<script>
+    for (i = 0; i<=10; i++) {
+        if (i == 5) {
+            continue;
+        }
+        document.write(i + "<br />");
+    }
+</script>
+<p>
+    Example 2: (see code)
+</p>
+<script>
+    var sum=0;
+    for(i=4; i<8; i++) {
+        if (i==6) {
+            continue;
+        }
+        sum +=i;
+    }
+    document.write(sum);
+</script>
+<h2><u>QUIZ</u></h2>
+<p>
+    What is the output of this code?
+</p>
+<script>
+    var x = 0;
+    while(x<6) {
+        x++;
+    }
+    document.write(x);
+</script>
+</br>
+<h1><u>FUNCTIONS</u></h1>
+<h2><u>User-Defined Functions</u></h2>
+<h3>JavaScript Functions</h3>
+<p>
+    A JavaScript <b>Function</b> is a block of code designed to 
+    perform a particular task. The main advantages of using functions: 
+</p>
+<ul>
+    <li>Code reuse: Define the code once, and use it many times.</li>
+    <li>Use the same code many times with different <b>arguments</b>, 
+    to produce different results.</li>
+    <li>A JavaScript function is executed when "something" 
+        invokes, or calls it.
+    </li>
+</ul>
+<h3>Defining a Function</h3>
+<p>
+    To define a JavaScript function, use the <b>function</b> keyword, 
+    followed by a <b>name,</b> followed by a set of <b>parentheses().</b> 
+    The code to be executed by the function is placed inside curly 
+    brackets {}. Function names can contain letters, digits, underscores,
+     and dollar signs (same rules as variables).
+</p>
+<h3>Calling a Function</h3>
+<p>
+    To execute the function, you need to call it. To call a function, 
+    start with the name of the function, then follow it with the 
+    arguments in parentheses. Always remember to end the statement 
+    with a <b>semicolon</b> after calling the function.</br>
+    Example: (see code)
+</p>
+<script>
+    /*
+    function myFunction() {
+        alert("calling a function");
+    }
+    myFunction();
+    */
+</script>
+<h3>Calling Functions</h3>
+<p>
+    Once the function is defined, JavaScript allows you to call it as many 
+    times as you want to. You can also call a function using this 
+    syntax: myFunction.call(). The difference is that when calling this 
+    way, you're passing the 'this' keyword to a function. 
+</p>
+<script>
+    /*
+    function myFunction() {
+        alert("Alert box!");
+    }
+    myFunction();
+    //"Alert box!"
+
+    //some other code
+    
+    myFunction();
+    //"Alert box!"
+    */
+</script>
+<h2><b>Function Parameters</b></h2>
+<h3>Function Parameters</h3>
+<p>
+    Functions can take <b>parameters</b>. Function <b>parameters</b> 
+    are the names listed in the function's definition. As with 
+    variables, parameters should be given <b>names</b>, which 
+    are <b>separated by commas</b> within the parentheses.
+</p>
+<p>
+    Syntax: </br>
+    functionName(param1, param2, param3) { </br>
+        //some code </br>
+    }
+</p>
+<h3>Using Parameters</h3>
+<p>
+    After defining the parameters, you can use them inside the 
+    function. </br>
+    Example: (see code)
+</p>
+<script>
+    /*
+    function sayHello(name) {
+        alert("Hi, " + name);
+    }
+    sayHello("Jessica");
+    */
+</script>
+<p>
+    Thus function takes in one parameter, which  is called 
+    <b>name</b>. When calling the function, provide the parameter's 
+    value (argument) inside the parentheses. Function <b>arguments</b> 
+    are the real values passed to (and received by) the function. 
+</p>
+<h3>Function Parameters</h3>
+<p>
+    You can define a single function, and pass different parameter 
+    values (arguments) to it. This will execute the function's 
+    code each time for the provided argument.
+</p>
+<script>
+    /*
+    function sayHello(name) {
+        alert("Hi, " + name);
+    }
+    sayHello("Jessica");
+    sayHello("David");
+    sayHello("John")
+    */
+</script>
+<h2><b>Using Multiple Parameters with Functions</b></h2>
+<h3>Multiple Parameters</h3>
+<p>
+    You can define multiple parameters for a function by 
+    <b>comma-separating</b> them.
+</p>
+<p>Sequence:</p>
+<p>
+    function myFunc(x, y) { </br>
+        //some code </br>
+    }
+</p>
+<p>
+    The example above defines the function <b>myFunc</b> to 
+    take two parameters.
+</p>
+<p>
+    The parameters are used within the function's definition. 
+    Function parameters are the names listed in the function 
+    definition. </br>
+    Example: (see code)
+</p>
+<script>
+    function sayHello(name, age) {
+        document.write( name + " is " + age + " years old.");
+    }
+    sayHello("Jessica", 27)
+</script>
+<p>
+    When calling a function, provide the arguments in the same 
+    order in which you defined them. If you pass more arguments 
+    than are defined, they will be assigned to an <u>array</u> 
+    called arguments. They can be used like this: arguments[0], 
+    arguments[1], etc.
+</p>
+<p>
+    After defining the function, you can call it as many times as 
+    needed. JavaScript functions do not check the number of 
+    arguments received. If a function is called with missing 
+    arguments (fewer than declared), the missing values are set 
+    to <b>undefined</b>, which indicates that a <b>variable</b> 
+    has not been assigned a value.
+</p>
+<h2><u>The return Statement</u></h2>
+<h3>Function Return</h3>
+<p>
+    A function can have an optional <b>return</b> statement. It 
+    is used to return a value from the whole function. This statement 
+    is useful when making calculations at require a result. When 
+    JavaScript reaches a <b>return</b> statement, the function 
+    stops executing.
+</p>
+<p>
+    Use the <b>return</b> statement to return a value. For example, 
+    let's calculate the product of two numbers, and return the result.
+    (see code)
+</p>
+<script>
+    function myFunction(a, b) {
+        return a * b;
+    }
+    var x = myFunction(5, 6);
+    document.write(x);
+</script>
+<p>
+    If you do not return anything from a function, it will 
+    return <b>undefined.</b>
+</p>
+<p>
+    Example 2: (see code)
+</p>
+<script>
+    function addNumbers(a, b) {
+        var c = a+b;
+        return c;
+    }
+    document.write( addNumbers(40, 2));
+</script>
+
+<h2><u>Alert, Prompt, Confirm</u></h2>
+<p>
+    JavaScript offers three types of popup boxes, the <b>Alert</b>, 
+    <b>Prompt</b>, and <b>Confirm</b> boxes.
+</p>
+<h3>The Alert Box</h3>
+<p>
+    An <b>alert box</b> is used when you want to ensure that information 
+    gets through to the user. When an alert box pops up, the user 
+    must click OK to proceed. The <b>alert</b> function takes a 
+    single parameter, which is the text displayed in the popup box.
+</p>
+<p>
+    Example: (see code)
+</p>
+<script> 
+   // alert("Do you really want to leave this page?");
+</script>
+<p>
+    To display <b>line breaks</b> within a popup box, use a 
+    backslash followed by the character n. </br> Example: (see code)
+</p>
+<script>
+    //alert("Hello\nHow are you?");
+</script>
+<h3>Prompt Box</h3>
+<p>
+    A <b>prompt box</b> is often used to have the user input a 
+    value before entering a page. When a prompt box pops up, the 
+    user will have to click either OK or Cancel to proceed after 
+    entering the input value. If the user clicks OK, the box 
+    <b>returns the input value.</b> If the user clicks Cancel, 
+    the box returns <b>null.</b>
+</p>
+<p>
+    The <b>prompt()</b> method takes <b>two parameters</b>. The 
+    first is the label, which you want to display in the text box. 
+    The second is a default string to display in the text box (optional).
+</br>
+    Example: (see code)
+</p>
+<script>
+    /*
+    var user = prompt("Please enter your name");
+    alert(user);
+    */
+</script>
+<p>
+    Do not overuse this method, because it prevents the user 
+    from accessing other parts of the page until the box is closed.
+</p>
+<h3>Confirm Box</h3>
+<p>
+    A <b>confirm box</b> is often used to have the user verify 
+    or accept something. When a confirm box pops up, the user 
+    must click either OK or Cancel to proceed. If the user clicks 
+    OK, the box returns <b>true</b>. If the user clicks Cancel, 
+    the box returns <b>false</b>.
+</p>
+<script>
+    /*
+    var result = confirm("Do you really want to leave this page?");
+    if (result == true) {
+        alert("Thanks for visiting");
+    }
+    else {
+        alert("Thanks for staying with us");
+    }
+    */
+</script>
+
+<h1>OBJECTS</h1>
+<h2><b>Introducing Objects</b></h2>
+<h3>JavaScript Objects</h3>
+<p>
+    JavaScript variables are containers for data values. 
+    <b>Objects</b> are variables too, but they can contain 
+    many values. Think of an object as a list of values that are written as 
+    <b>name:value</b> pairs, with the names and the values separated 
+    by colons.
+</p>
+<p>
+    Example: (see code)
+</p>
+<script>
+    var person = {
+        name: "John", age: 31, favColor: "green", height: 183
+    };
+</script>
+<p>
+    These values are called <b>properties</b>
+</p>
+<table>
+    <thead>
+        <tr>
+            <th>Property</th>
+            <th>Property Value</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>name</td>
+            <td>John</td>
+        </tr>
+        <tr>
+            <td>age</td>
+            <td>31</td>
+        </tr>
+        <tr>
+            <td>favColor</td>
+            <td>green</td>
+        </tr>
+        <tr>
+            <td>height</td>
+            <td>183</td>
+        </tr>
+    </tbody>
+</table>
+<p>
+    JavaScript objects are containers for <b>named values.</b>
+</p>
+
+<h3>Object Properties</h3>
+<p>
+    You can access <u>object</u> properties in two ways.
+</p>
+<p>
+    objectName.propertyName
+</br>
+    or 
+</br>
+    objectName['propertyName']
+</p>
+<p>
+    This example demonstrates how to access the age of our person 
+    object. (see code)
+</p>
+<script>
+    var person = {
+        name: "John", age:31, favColor: "green", height: 183
+    };
+    var x = person.age;
+    var y = person['age'];
+</script>
+<p>
+    JavaScript's built-in <b>length</b> property is used to count 
+    the number of characters in a property or <u>string</u>.
+</p>
+<script>
+    var course = {name: "JS", lessons: 41};
+    document.write(course.name.length);
+</script>
+<p>
+    Objects are one of the core concepts in JavaScript.
+</p>
+<h3>Object Methods</h3>
+<p>
+    An <u>object <b>method</b></u> is a property that contains 
+    a <b>function definition.</b>
+</p>
+<p>
+    Use the following syntax to access an <u>object method.</u>
+</p>
+<p>
+    objectName.methodName()
+</p>
+<p>
+    <b>document.write()</b> outputs data. The <b>Write()</b> function 
+    is actually a <u>method</u> of the <b>document</b> <u>object.</u>
+</p>
+<script>
+    document.write("This is some text");
+</script>
+<p>
+    Methods are functions that are stored as <u>object</u> properties.
+</p>
+<p>
+    Access the "color" property of the "hair" object using 
+    dot syntax: hair.color
+</p>
+
+<h2><u>Creating Your Own Objects</u></h2>
+<h3>The Object Constructor</h3>
+
+
+
+
+
+</body>
+</html>   

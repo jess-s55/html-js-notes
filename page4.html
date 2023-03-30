@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="This is an awesome website">
+    <title>Jessica's website</title>
+</head>
+<body>
+    <p><a href="index.html">Home</a></p>
+    <p><b>How many times do you brush your teeth every day?</b></p>
+    <form action="https://www.google.com">
+        <input type="radio" name="number" value="1" />1<br/>
+        <input type="radio" name="number" value="2" />2<br/>
+        <input type="radio" name="number" value="3" />3<br/>
+        <input type="radio" name="number" value="4" />4 or more<br/>
+        <br/>
+        <p><b>What is your favorite fruit?</b></p>
+        <input type="radio" name="fruit" value="apples" />Apples<br/>
+        <input type="radio" name="fruit" value="bananas" />Bananas<br/>
+        <input type="radio" name="fruit" value="oranges" />Oranges<br/>
+        <input type="radio" name="fruit" value="mango" />Mango<br/>
+        <input type="submit"/></form><br/>
+    </form>
+<!--when you hit submit it brings you to google-->
+<!--
+    <form action="https://www.google.com" method="GET">
+--when you use GET, the form data will be visible in the page address
+   
+    <form action="https://www.google.com" method="POST">
+--use POST if the form is updating data, or includes 
+  sensitive information (passwords)
+--POST offers better security bc the submitted data is not 
+  visible in the page address
+-->
+    <form>
+        <input type="text" name="username" /><br/>
+        <input type="password" name="password" /><br/>
+        <p>What fruit do you like? (check all that apply)</p>
+        <input type="checkbox" name="fruit" value="1" />Apple<br/>
+        <input type="checkbox" name="fruit" value="2" />Banana<br/>
+        <input type="checkbox" name="fruit" value="3" />Orange<br/>
+        <input type="checkbox" name="fruit" value="4" />Plum<br/>
+    </form>
+    <audio src="06. Have Faith in Me.mp3" controls>Audio not supported</audio>
+<!--
+    <audio controls autoplay loop>
+        <source src="audio.mp3" type="audio/mpeg">
+        <source src="audio.ogg" type="audio/ogg">
+    </audio>
+-->
+    Status:<progress min="0" max="100" value="35"></progress>
+
+
+
+</body>
